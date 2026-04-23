@@ -53,6 +53,39 @@ class _AuthScreenState extends ConsumerState<AuthScreen> {
     }
   }
 
+  Future<void> _googleLogin() async {
+    setState(() => _loading = true);
+    try {
+      final auth = ref.read(authServiceProvider);
+      final credential = await auth.signInWithGoogle();
+      final user = credential.user;
+      if (user != null) {
+        final firestore = ref.read(firestoreServiceProvider);
+        final existing = await firestore.getUserById(user.uid);
+        await firestore.saveUser(
+          AppUser(
+            uid: user.uid,
+            email: user.email ?? _demoBuyerEmail,
+            // Keep existing role for returning Google users.
+            role: existing?.role ?? _role,
+          ),
+        );
+      }
+    } catch (e) {
+      if (!mounted) return;
+      String message = 'Google login failed. Please try again.';
+      final raw = e.toString();
+      if (raw.contains('10') || raw.contains('DEVELOPER_ERROR')) {
+        message = 'Google sign-in config issue: add SHA key in Firebase, enable Google auth, then download latest google-services.json.';
+      } else if (raw.contains('google-sign-in-cancelled')) {
+        message = 'Google sign-in cancelled.';
+      }
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(message)));
+    } finally {
+      if (mounted) setState(() => _loading = false);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -86,7 +119,7 @@ class _AuthScreenState extends ConsumerState<AuthScreen> {
                     ),
                     const SizedBox(height: 12),
                     DropdownButtonFormField<String>(
-                      value: _role,
+                      initialValue: _role,
                       decoration: const InputDecoration(labelText: 'Role'),
                       items: const [
                         DropdownMenuItem(value: 'buyer', child: Text('Buyer')),
@@ -104,6 +137,12 @@ class _AuthScreenState extends ConsumerState<AuthScreen> {
                               child: CircularProgressIndicator(strokeWidth: 2),
                             )
                           : const Text('Continue (Hardcoded Demo)'),
+                    ),
+                    const SizedBox(height: 8),
+                    OutlinedButton.icon(
+                      onPressed: _loading ? null : _googleLogin,
+                      icon: const Icon(Icons.login),
+                      label: const Text('Login with Google'),
                     ),
                   ],
                 ),

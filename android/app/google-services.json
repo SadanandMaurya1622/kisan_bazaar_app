@@ -1,74 +1,26 @@
 {
   "project_info": {
-    "project_number": "844732360071",
-    "firebase_url": "https://shopkeep-82465-default-rtdb.asia-southeast1.firebasedatabase.app",
-    "project_id": "shopkeep-82465",
-    "storage_bucket": "shopkeep-82465.appspot.com"
+    "project_number": "429240384407",
+    "project_id": "kisanbazaar-53646",
+    "storage_bucket": "kisanbazaar-53646.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:844732360071:android:6cc1dd85972ba600a29f22",
+        "mobilesdk_app_id": "1:429240384407:android:2a6166306c7bf8397be2d2",
         "android_client_info": {
-          "package_name": "com.example.agro_connect"
+          "package_name": "com.kisan_bazaar_app"
         }
       },
-      "oauth_client": [
-        {
-          "client_id": "844732360071-5rmpk4hqqk3v1jqfsm604u3fk6nt0imt.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
+      "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyBpEpBE6y98NyCWB_aeSHbfIsCQZKSkgtQ"
+          "current_key": "AIzaSyBXqCjjI6tSW4SgzxZpUInuHLnISgTFFYU"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "844732360071-5rmpk4hqqk3v1jqfsm604u3fk6nt0imt.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:844732360071:android:0b48f6f029b33265a29f22",
-        "android_client_info": {
-          "package_name": "com.shop.keep.dnm"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "844732360071-9be3v5meib55eenqq27545dfqussgdtm.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.shop.keep.dnm",
-            "certificate_hash": "b3d684dee699c94478471ebfccc1f66fcdd95d1a"
-          }
-        },
-        {
-          "client_id": "844732360071-5rmpk4hqqk3v1jqfsm604u3fk6nt0imt.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyBpEpBE6y98NyCWB_aeSHbfIsCQZKSkgtQ"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "844732360071-5rmpk4hqqk3v1jqfsm604u3fk6nt0imt.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
+          "other_platform_oauth_client": []
         }
       }
     }

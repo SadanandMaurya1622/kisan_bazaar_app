@@ -20,6 +20,13 @@ class FirestoreService {
     await _users.doc(user.uid).set(user.toMap(), SetOptions(merge: true));
   }
 
+  Future<AppUser?> getUserById(String uid) async {
+    final snap = await _users.doc(uid).get();
+    final data = snap.data();
+    if (!snap.exists || data == null) return null;
+    return AppUser.fromMap(data);
+  }
+
   Stream<AppUser?> watchUser(String uid) {
     return _users.doc(uid).snapshots().map((snap) {
       if (!snap.exists || snap.data() == null) return null;

@@ -1,4 +1,4 @@
-package com.example.agro_connect
+package com.kisan_bazaar_app
 
 import io.flutter.embedding.android.FlutterActivity
 

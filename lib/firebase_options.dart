@@ -4,11 +4,11 @@ import 'package:flutter/foundation.dart'
 
 class DefaultFirebaseOptions {
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyBpEpBE6y98NyCWB_aeSHbfIsCQZKSkgtQ',
-    appId: '1:844732360071:android:6cc1dd85972ba600a29f22',
-    messagingSenderId: '844732360071',
-    projectId: 'shopkeep-82465',
-    storageBucket: 'shopkeep-82465.appspot.com',
+    apiKey: 'AIzaSyBXqCjjI6tSW4SgzxZpUInuHLnISgTFFYU',
+    appId: '1:429240384407:android:2a6166306c7bf8397be2d2',
+    messagingSenderId: '429240384407',
+    projectId: 'kisanbazaar-53646',
+    storageBucket: 'kisanbazaar-53646.firebasestorage.app',
   );
 
   static FirebaseOptions get currentPlatform {

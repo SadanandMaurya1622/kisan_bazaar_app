@@ -69,7 +69,7 @@ class _CropDetailScreenState extends ConsumerState<CropDetailScreen> {
             ),
             const SizedBox(height: 10),
             DropdownButtonFormField<String>(
-              value: _deliveryMethod,
+              initialValue: _deliveryMethod,
               items: const [
                 DropdownMenuItem(value: 'pickup', child: Text('Buyer pickup')),
                 DropdownMenuItem(value: 'delivery', child: Text('Self delivery')),
